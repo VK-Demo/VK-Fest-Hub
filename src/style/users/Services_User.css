@@ -1,0 +1,854 @@
+/* ==========================================================================
+   VK FEST HUB - USER SERVICES PAGE
+   Strictly scoped under .vk-services-user-... to isolate page styling
+   ========================================================================== */
+
+.vk-services-user-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-canvas, #FFFDF9);
+  color: var(--color-text-primary, #1F2937);
+  font-family: var(--font-ui, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   SECTION 1: HERO PROMOTIONAL BANNER CAROUSEL
+   Viewport height under sticky navbar (~65px)
+   Image-only, no text overlay, auto-advances every 3 seconds
+   ========================================================================== */
+
+.vk-services-user-hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 65px);
+  max-height: calc(100vh - 65px);
+  min-height: 420px;
+  overflow: hidden;
+  background-color: #0F0A08;
+}
+
+.vk-services-user-hero-slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.vk-services-user-hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
+  pointer-events: none;
+}
+
+.vk-services-user-hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.vk-services-user-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Carousel Prev / Next Arrow Controls */
+.vk-services-user-hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(15, 10, 8, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.25s ease;
+  padding: 0;
+}
+
+.vk-services-user-hero-arrow:hover {
+  background: #8E0D12;
+  border-color: #8E0D12;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 4px 16px rgba(142, 13, 18, 0.4);
+}
+
+.vk-services-user-hero-arrow.prev {
+  left: 24px;
+}
+
+.vk-services-user-hero-arrow.next {
+  right: 24px;
+}
+
+/* Carousel Indicator Dots */
+.vk-services-user-hero-dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+  background: rgba(15, 10, 8, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.vk-services-user-hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vk-services-user-hero-dot:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.vk-services-user-hero-dot.active {
+  width: 28px;
+  border-radius: 12px;
+  background: #C9A063;
+  box-shadow: 0 0 10px rgba(201, 160, 99, 0.8);
+}
+
+/* ==========================================================================
+   SECTION 2: HOW IT WORKS (4 Visual Steps with Gold Icons)
+   Placed ABOVE Services Catalog
+   ========================================================================== */
+
+.vk-services-user-how-section {
+  padding: 56px 24px 64px;
+  background: linear-gradient(180deg, #FFFDF9 0%, #FFF8EB 100%);
+  border-bottom: 1px solid #F1E5D5;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.vk-services-user-how-container {
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.vk-services-user-how-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.vk-services-user-how-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #8E0D12;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+}
+
+.vk-services-user-how-subtitle {
+  font-size: 15px;
+  color: #6B7280;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.vk-services-user-how-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.vk-services-user-how-card {
+  background: #FFFFFF;
+  border: 1px solid #EFE4D6;
+  border-radius: 18px;
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(60, 20, 10, 0.04);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vk-services-user-how-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(142, 13, 18, 0.08);
+  border-color: #C9A063;
+}
+
+.vk-services-user-how-icon-wrap {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 18px;
+}
+
+.vk-services-user-how-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #FDF4E7;
+  border: 2px solid #D4AF37;
+  color: #8E0D12;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.vk-services-user-how-card:hover .vk-services-user-how-icon {
+  background: #8E0D12;
+  color: #F0DFBE;
+  border-color: #8E0D12;
+}
+
+.vk-services-user-how-step-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #8E0D12;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(142, 13, 18, 0.3);
+}
+
+.vk-services-user-how-card-title {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #1F2937;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.2px;
+}
+
+.vk-services-user-how-card-desc {
+  font-size: 13.5px;
+  color: #6B7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 3: SERVICES CATALOG (Horizontal Split Cards)
+   3 Cards / Row (Desktop), 2 Cards / Row (Tablet), 1 Card / Row (Mobile)
+   Left: Image | Right: Service Name, Description & Book Now Button
+   ========================================================================== */
+
+.vk-services-user-catalog-section {
+  padding: 56px 24px 80px;
+  background-color: #FFFDF9;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.vk-services-user-catalog-container {
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.vk-services-user-catalog-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.vk-services-user-catalog-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #8E0D12;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Grid Layout: 3 Columns on Desktop, 2 on Tablet, 1 on Mobile */
+.vk-services-user-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Individual Card (Horizontal Split Layout) */
+.vk-services-user-card {
+  background: #FFFFFF;
+  border: 1px solid #EFE4D6;
+  border-radius: 16px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(60, 20, 10, 0.04);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.vk-services-user-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(142, 13, 18, 0.08);
+  border-color: #C9A063;
+}
+
+/* Card Left: Image */
+.vk-services-user-card-img-wrap {
+  width: 115px;
+  height: 98px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #F8F3EC;
+}
+
+.vk-services-user-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.vk-services-user-card:hover .vk-services-user-card-img {
+  transform: scale(1.05);
+}
+
+/* Card Right: Content Body */
+.vk-services-user-card-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vk-services-user-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1F2937;
+  margin: 0 0 6px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.2px;
+}
+
+.vk-services-user-card-desc {
+  font-size: 13px;
+  color: #6B7280;
+  line-height: 1.4;
+  margin: 0 0 10px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Card Action Area: Book Now Button + Chevron */
+.vk-services-user-card-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.vk-services-user-book-btn {
+  background-color: #8E0D12;
+  color: #FFFFFF;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.vk-services-user-book-btn:hover {
+  background-color: #6E0A0E;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(142, 13, 18, 0.25);
+}
+
+.vk-services-user-book-icon {
+  font-size: 13px;
+}
+
+.vk-services-user-chevron {
+  color: #9CA3AF;
+  font-size: 18px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.vk-services-user-card:hover .vk-services-user-chevron {
+  color: #8E0D12;
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   VIEW ALL SERVICES BUTTON
+   ========================================================================== */
+
+.vk-services-user-view-all-wrap {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.vk-services-user-view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  color: #8E0D12;
+  border: 2px solid #8E0D12;
+  font-size: 14.5px;
+  font-weight: 700;
+  padding: 12px 32px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(142, 13, 18, 0.08);
+}
+
+.vk-services-user-view-all-btn:hover {
+  background-color: #8E0D12;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(142, 13, 18, 0.24);
+}
+
+.vk-services-user-view-all-icon {
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+
+.vk-services-user-view-all-btn:hover .vk-services-user-view-all-icon {
+  transform: translateY(2px);
+}
+
+/* ==========================================================================
+   SECTION 4: DEDICATED CONCIERGE CTA BANNER
+   Just before the Footer
+   ========================================================================== */
+
+.vk-services-user-concierge-section {
+  padding: 40px 24px 80px;
+  background-color: #FFFDF9;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.vk-services-user-concierge-container {
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.vk-services-user-concierge-card {
+  background: linear-gradient(135deg, #6E0C23 0%, #8E0D12 50%, #4D0616 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  border-radius: 24px;
+  padding: 50px 32px;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(110, 12, 35, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.vk-services-user-concierge-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.vk-services-user-concierge-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+  line-height: 1.3;
+}
+
+.vk-services-user-concierge-desc {
+  font-size: 15.5px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0 0 28px 0;
+}
+
+.vk-services-user-concierge-actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+.vk-services-user-concierge-btn {
+  background: linear-gradient(135deg, #DFB76C 0%, #F5D79E 100%);
+  color: #4A080C;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 13px 32px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vk-services-user-concierge-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(223, 183, 108, 0.45);
+  background: linear-gradient(135deg, #F0CD89 0%, #FFF0C9 100%);
+}
+
+.vk-services-user-concierge-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 10px 24px;
+  border-radius: 30px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.vk-services-user-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.vk-services-user-contact-link:hover {
+  color: #DFB76C;
+}
+
+.vk-services-user-contact-icon {
+  color: #DFB76C;
+  font-size: 15px;
+}
+
+.vk-services-user-contact-divider {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* Tablet & Smaller Laptops */
+@media (max-width: 1080px) {
+  .vk-services-user-how-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .vk-services-user-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+/* Tablets (Portrait) */
+@media (max-width: 768px) {
+  .vk-services-user-hero {
+    height: 60vh;
+    min-height: 350px;
+  }
+
+  .vk-services-user-hero-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .vk-services-user-hero-arrow.prev {
+    left: 14px;
+  }
+
+  .vk-services-user-hero-arrow.next {
+    right: 14px;
+  }
+
+  .vk-services-user-how-section {
+    padding: 44px 18px 50px;
+  }
+
+  .vk-services-user-how-title {
+    font-size: 26px;
+  }
+
+  .vk-services-user-catalog-section {
+    padding: 40px 18px 60px;
+  }
+
+  .vk-services-user-catalog-title {
+    font-size: 26px;
+  }
+
+  .vk-services-user-concierge-card {
+    padding: 40px 24px;
+  }
+
+  .vk-services-user-concierge-title {
+    font-size: 26px;
+  }
+}
+
+/* Mobile Devices (1 card per row) */
+@media (max-width: 640px) {
+  .vk-services-user-hero {
+    height: 50vh;
+    min-height: 300px;
+  }
+
+  .vk-services-user-hero-dots {
+    bottom: 16px;
+    padding: 6px 12px;
+  }
+
+  .vk-services-user-how-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .vk-services-user-how-card {
+    padding: 22px 16px;
+  }
+
+  .vk-services-user-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .vk-services-user-card {
+    padding: 12px 14px;
+    gap: 14px;
+  }
+
+  .vk-services-user-card-img-wrap {
+    width: 95px;
+    height: 85px;
+  }
+
+  .vk-services-user-card-title {
+    font-size: 15px;
+  }
+
+  .vk-services-user-card-desc {
+    font-size: 12.5px;
+  }
+
+  .vk-services-user-concierge-section {
+    padding: 30px 16px 60px;
+  }
+
+  .vk-services-user-concierge-card {
+    padding: 32px 18px;
+    border-radius: 18px;
+  }
+
+  .vk-services-user-concierge-title {
+    font-size: 22px;
+  }
+
+  .vk-services-user-concierge-desc {
+    font-size: 13.5px;
+  }
+
+  .vk-services-user-concierge-contact {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 16px;
+  }
+
+  .vk-services-user-contact-divider {
+    display: none;
+  }
+}
+
+/* Small Mobile Phones (iPhone SE, Galaxy A series, etc.) */
+@media (max-width: 480px) {
+  .vk-services-user-hero {
+    height: 44vh;
+    min-height: 270px;
+  }
+
+  .vk-services-user-hero-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+  }
+
+  .vk-services-user-hero-arrow.prev {
+    left: 8px;
+  }
+
+  .vk-services-user-hero-arrow.next {
+    right: 8px;
+  }
+
+  .vk-services-user-how-section {
+    padding: 36px 14px 40px;
+  }
+
+  .vk-services-user-how-title {
+    font-size: 22px;
+  }
+
+  .vk-services-user-how-subtitle {
+    font-size: 13px;
+  }
+
+  .vk-services-user-how-card {
+    padding: 18px 14px;
+  }
+
+  .vk-services-user-how-icon-wrap {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 12px;
+  }
+
+  .vk-services-user-how-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 20px;
+  }
+
+  .vk-services-user-how-card-title {
+    font-size: 15px;
+  }
+
+  .vk-services-user-catalog-section {
+    padding: 32px 14px 48px;
+  }
+
+  .vk-services-user-catalog-title {
+    font-size: 22px;
+  }
+
+  .vk-services-user-card {
+    padding: 10px 12px;
+    gap: 12px;
+  }
+
+  .vk-services-user-card-img-wrap {
+    width: 86px;
+    height: 78px;
+    border-radius: 10px;
+  }
+
+  .vk-services-user-card-title {
+    font-size: 14.5px;
+  }
+
+  .vk-services-user-card-desc {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .vk-services-user-book-btn {
+    padding: 5px 12px;
+    font-size: 11.5px;
+    border-radius: 6px;
+  }
+
+  .vk-services-user-view-all-btn {
+    padding: 10px 24px;
+    font-size: 13.5px;
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  .vk-services-user-concierge-card {
+    padding: 26px 14px;
+  }
+
+  .vk-services-user-concierge-title {
+    font-size: 20px;
+  }
+
+  .vk-services-user-concierge-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Extra Small Phones (320px - 360px) */
+@media (max-width: 360px) {
+  .vk-services-user-card-img-wrap {
+    width: 74px;
+    height: 70px;
+  }
+
+  .vk-services-user-card-title {
+    font-size: 13.5px;
+  }
+
+  .vk-services-user-card {
+    padding: 8px 10px;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,83 @@
+/* ==========================================================================
+   VK FEST HUB - PRELOADER STYLES
+   ========================================================================== */
+
+.preloader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 50%, #140f12 0%, #08080a 60%, #030304 100%);
+  overflow: hidden;
+  user-select: none;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.preloader-overlay.preloader-fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.03);
+  pointer-events: none;
+}
+
+.preloader-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  max-width: 95vw;
+}
+
+/* Image Container */
+.preloader-image-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.7),
+              0 0 40px rgba(142, 13, 18, 0.35);
+  animation: preloader-float 3s ease-in-out infinite alternate;
+  background-color: transparent;
+}
+
+.preloader-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(90vw, 560px);
+  max-height: 75vh;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+/* Animations */
+@keyframes preloader-float {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  100% {
+    transform: translateY(-8px) scale(1.015);
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 576px) {
+  .preloader-image-wrapper {
+    border-radius: 16px;
+  }
+
+  .preloader-image {
+    max-width: 92vw;
+    max-height: 70vh;
+  }
+}

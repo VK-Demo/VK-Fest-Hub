@@ -1,0 +1,313 @@
+/* ==========================================================================
+   VK FEST HUB - USER FOOTER STYLES
+   Used across all User Pages: Matrimony, Booking, Photos & Videos
+   Theme: #f5c485 Golden Canvas with Deep Maroon Accents
+   ========================================================================== */
+
+.vk-footer {
+  background: #f5c485;
+  color: #2b1407;
+  font-family: var(--font-ui, system-ui, sans-serif);
+  position: relative;
+  border-top: 3px solid var(--color-primary, #8E0D12);
+  margin-top: 20px;
+}
+
+/* Main 4-Column Footer */
+.vk-footer-main {
+  padding: 56px 20px 48px;
+  background: #f5c485;
+}
+
+.vk-footer-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.vk-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 36px;
+}
+
+.vk-footer-brand-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.vk-footer-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.vk-footer-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary, #8E0D12);
+  box-shadow: 0 4px 10px rgba(142, 13, 18, 0.15);
+}
+
+.vk-footer-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.vk-footer-brand-name {
+  color: #5a0508;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.vk-footer-brand-tag {
+  color: var(--color-primary, #8E0D12);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.vk-footer-about {
+  color: #3b1d0c;
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin: 0 0 20px;
+  max-width: 330px;
+  font-weight: 500;
+}
+
+.vk-footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.vk-footer-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #3b1d0c;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.vk-footer-contact-item:hover {
+  color: var(--color-primary, #8E0D12);
+  transform: translateX(2px);
+}
+
+.vk-footer-contact-icon {
+  color: var(--color-primary, #8E0D12);
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.vk-footer-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vk-social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: var(--color-primary, #8E0D12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(142, 13, 18, 0.12);
+  transition: all 0.25s ease;
+}
+
+.vk-social-link:hover {
+  background-color: var(--color-primary, #8E0D12);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(142, 13, 18, 0.25);
+}
+
+.vk-footer-heading {
+  color: #5a0508;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  margin: 0 0 20px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.vk-footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  height: 2px;
+  background-color: var(--color-primary, #8E0D12);
+  border-radius: 2px;
+}
+
+.vk-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.vk-footer-links a {
+  color: #3b1d0c;
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vk-footer-links a:hover {
+  color: var(--color-primary, #8E0D12);
+  transform: translateX(3px);
+  font-weight: 600;
+}
+
+.vk-footer-highlight-link {
+  color: var(--color-primary, #8E0D12) !important;
+  font-weight: 700 !important;
+}
+
+.vk-link-arrow {
+  font-size: 11px;
+  transition: transform 0.2s ease;
+}
+
+.vk-footer-highlight-link:hover .vk-link-arrow {
+  transform: translateX(3px);
+}
+
+.vk-footer-vendor-cta {
+  color: var(--color-primary, #8E0D12) !important;
+  font-weight: 700 !important;
+}
+
+/* Bottom Strip */
+.vk-footer-bottom {
+  background: #e5b06a;
+  padding: 22px 20px;
+  border-top: 1px solid rgba(142, 13, 18, 0.12);
+}
+
+.vk-footer-bottom-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.vk-footer-copyright {
+  color: #4a240e;
+  font-size: 12.5px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.vk-footer-trust-badges {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.vk-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #4a240e;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.vk-trust-icon {
+  color: var(--color-primary, #8E0D12);
+  font-size: 14px;
+}
+
+/* Responsive Footer */
+@media (max-width: 992px) {
+  .vk-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .vk-footer-brand-col {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .vk-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .vk-footer-bottom-flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+  }
+
+  .vk-footer-trust-badges {
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vk-footer-main {
+    padding: 36px 16px 28px;
+  }
+
+  .vk-footer-brand-name {
+    font-size: 17px;
+  }
+
+  .vk-footer-about {
+    font-size: 12.5px;
+  }
+
+  .vk-footer-contact-item {
+    font-size: 12.5px;
+  }
+
+  .vk-footer-heading {
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+
+  .vk-footer-links a {
+    font-size: 13px;
+  }
+
+  .vk-footer-bottom {
+    padding: 16px 12px;
+  }
+
+  .vk-footer-trust-badges {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}

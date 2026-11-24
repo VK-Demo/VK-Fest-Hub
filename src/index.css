@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ==========================================================================
+     VK FEST HUB DESIGN SYSTEM
+     ========================================================================== */
+
+  /* Brand Colors (Crimson / Maroon Family) */
+  --color-primary: #8E0D12;          /* Core Brand Maroon: Header bar, primary buttons, step badges */
+  --color-primary-dark: #6E0C23;     /* Dark Burgundy: Top app bar background, dark banners */
+  --color-primary-accent: #AD1114;   /* Bright Crimson: Notification dots, alert pills, heart icons */
+  --color-primary-light: #FCEEEF;    /* Soft Rose: Active tab/category backgrounds, subtle badges */
+
+  /* Backgrounds & Surfaces */
+  --color-bg-canvas: #FEF3DD;        /* Warm Champagne Cream: Main app page background (from sample) */
+  --color-bg-card: #FFFFFF;          /* Pure White: Cards, popups, inputs, detail sheets */
+  --color-bg-subtle: #FFF8EB;        /* Soft Light Cream: Package boxes, summary sections */
+  --color-border: #F0E3CB;           /* Subtle Warm Border: Dividers, input outlines, borders */
+
+  /* Text Colors */
+  --color-text-headline: #0D153C;    /* Midnight Slate: Main headings, package names, prices */
+  --color-text-primary: #1F2937;     /* Dark Charcoal: Field labels, vendor names, titles */
+  --color-text-secondary: #555C68;   /* Slate Gray: Paragraphs, description copy, metadata */
+  --color-text-muted: #9CA3AF;       /* Muted Gray: Placeholder text, timestamps, inactive icons */
+  --color-text-white: #FFFFFF;       /* Pure White: Text inside maroon buttons & headers */
+
+  /* Functional & Status */
+  --color-status-success: #16A34A;   /* Emerald Green: Success badge, active toggle, confirmed check */
+  --color-status-pending: #F59E0B;   /* Amber / Star Rating: Review stars (★), pending status */
+  --color-status-danger: #DC2626;    /* Red: Errors, rejections */
+
+  /* Font Families */
+  --font-ui: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Font Sizes */
+  --font-size-display: 24px;         /* Brand header, splash titles */
+  --font-size-appbar: 18px;          /* App navigation header title */
+  --font-size-section: 16px;         /* Section titles (Featured Services, Packages) */
+  --font-size-card: 15px;            /* Card titles & vendor names */
+  --font-size-btn: 15px;             /* Buttons (Enquire Now, Save & Continue) */
+  --font-size-body: 14px;            /* Descriptions, paragraph text */
+  --font-size-input: 13px;           /* Form input text & placeholder */
+  --font-size-meta: 12px;            /* Subtitles, location, review count */
+  --font-size-micro: 11px;           /* Badges, bottom tab bar items, timestamps */
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Radii */
+  --radius-sm: 8px;                  /* Input fields, small tags */
+  --radius-md: 12px;                 /* Category tiles, service cards, package container */
+  --radius-lg: 20px;                 /* Bottom sheets, top rounded corners */
+  --radius-full: 9999px;             /* Pill buttons, search bar, notification dots */
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(100, 30, 20, 0.06);
+  --shadow-lg: 0 10px 25px rgba(100, 30, 20, 0.10);
+}
+
+/* ==========================================================================
+   Base Reset & Mobile-First Layout
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  background-color: var(--color-bg-canvas);
+  color: var(--color-text-primary);
+  font-family: var(--font-ui);
+  font-size: var(--font-size-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-canvas);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-headline);
+}
+
+h1 { font-size: var(--font-size-display); }
+h2 { font-size: var(--font-size-appbar); }
+h3 { font-size: var(--font-size-section); }
+
+p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+button {
+  font-family: var(--font-ui);
+}
+
+input, textarea, select {
+  font-family: var(--font-ui);
+}

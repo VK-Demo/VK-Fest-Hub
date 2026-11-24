@@ -1,0 +1,50 @@
+/* VendorLogin.css */
+@import "./VendorRegister.css";
+
+.login-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #fff4ed;
+  color: var(--brand);
+  display: grid;
+  place-items: center;
+  margin-bottom: 16px;
+}
+
+.stack-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--brand);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.demo-hint {
+  margin-top: 18px;
+  padding: 10px 14px;
+  background: #fbf9f7;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.demo-hint b {
+  color: var(--ink);
+}

@@ -1,0 +1,165 @@
+/* Payment.css */
+@import "./VendorDetails.css";
+
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+}
+
+.checkout-methods, .order-summary {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.checkout-methods h3, .order-summary h3 {
+  font: 800 16px 'Manrope', sans-serif;
+  margin: 0 0 16px;
+  color: var(--ink);
+}
+
+.method-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 15px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.method-row:hover {
+  border-color: #c9b9ac;
+}
+
+.method-row.chosen {
+  border-color: var(--brand);
+  background: #fffaf7;
+}
+
+.method-icon {
+  height: 36px;
+  width: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #fbf9f7;
+  color: var(--ink);
+}
+
+.method-row.chosen .method-icon {
+  background: #fff0e7;
+  color: var(--brand);
+}
+
+.method-row b {
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.method-check {
+  margin-left: auto;
+  color: var(--brand);
+}
+
+.upi-options {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.upi-options button {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 7px 12px;
+  background: white;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.upi-options button.active {
+  border-color: var(--brand);
+  color: var(--brand);
+  background: #fff8f4;
+}
+
+.summary-vendor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.summary-vendor .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.summary-vendor b {
+  display: block;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.summary-vendor small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.summary-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.summary-line b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.summary-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  margin-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.summary-total strong {
+  font: 800 20px 'Manrope', sans-serif;
+  color: var(--brand);
+}
+
+@media (max-width: 800px) {
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,877 @@
+/* ==========================================================================
+   VK FEST HUB - VENDOR LOGIN STYLES
+   Maintains 100% theme consistency with VK FEST HUB Design System
+   SQUARE CONTAINER ADOPTED FOR RADHA-KRISHNA BACKGROUND FRAME
+   ========================================================================== */
+
+.vk-auth-page {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #FEF3DD;
+  background-image: url('../../assets/images/common/krishna_auth_bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  font-family: var(--font-ui, 'Poppins', sans-serif);
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   TOP HEADER
+   -------------------------------------------------------------------------- */
+.vk-auth-header {
+  background-color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(213, 173, 101, 0.35);
+  padding: 10px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(100, 30, 20, 0.04);
+}
+
+.vk-auth-header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vk-auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.vk-auth-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-primary, #8E0D12);
+}
+
+.vk-auth-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.vk-auth-brand-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-primary, #8E0D12);
+  line-height: 1.15;
+}
+
+.vk-auth-brand-tagline {
+  font-size: 10.5px;
+  color: var(--color-text-secondary, #555C68);
+  font-weight: 500;
+}
+
+.vk-auth-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-text-primary, #1F2937);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: var(--color-bg-subtle, #FFF8EB);
+  border: 1px solid var(--color-border, #F0E3CB);
+  transition: all 0.2s ease;
+}
+
+.vk-auth-back-link:hover {
+  background: var(--color-primary, #8E0D12);
+  color: #ffffff;
+  border-color: var(--color-primary, #8E0D12);
+}
+
+.vk-back-icon {
+  font-size: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   MAIN BODY & SQUARE CONTAINER ALIGNMENT
+   Desktop: Aligns in the left open canvas of Radha-Krishna frame
+   Tablet/Mobile: Center-aligned
+   -------------------------------------------------------------------------- */
+.vk-auth-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px clamp(16px, 4vw, 40px);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.vk-auth-card {
+  width: 100%;
+  max-width: 490px;
+  max-height: calc(100vh - 74px);
+  max-height: calc(100dvh - 74px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 22px;
+  border: 2px solid rgba(213, 173, 101, 0.6);
+  box-shadow: 
+    0 16px 40px rgba(90, 10, 20, 0.14),
+    0 0 0 1px rgba(255, 255, 255, 0.9) inset,
+    0 0 24px rgba(212, 175, 55, 0.18);
+  padding: 18px 24px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.vk-auth-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 30px;
+  right: 30px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #D4AF37, #8E0D12, #D4AF37, transparent);
+  border-radius: 0 0 4px 4px;
+}
+
+/* Card Top: Brand Row + Welcome Title */
+.vk-auth-card-top {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vk-auth-card-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vk-auth-card-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-primary, #8E0D12);
+  box-shadow: 0 2px 8px rgba(142, 13, 18, 0.18);
+  flex-shrink: 0;
+}
+
+.vk-auth-card-brand-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.vk-auth-card-brand-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary, #8E0D12);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.vk-auth-card-tagline {
+  font-size: 10.5px;
+  color: var(--color-text-secondary, #555C68);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.vk-auth-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text-headline, #0D153C);
+  margin: 4px 0 0;
+  text-align: left;
+}
+
+/* --------------------------------------------------------------------------
+   SOCIAL LOGINS GRID (Google & Apple side-by-side)
+   -------------------------------------------------------------------------- */
+.vk-auth-social-stack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.vk-social-btn {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #ffffff;
+  border: 1.5px solid #E5E7EB;
+  color: #1F2937;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.vk-social-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.vk-social-google:hover {
+  border-color: #4285F4;
+  background-color: #F8FAFC;
+}
+
+.vk-social-apple {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+.vk-social-apple:hover {
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.vk-social-icon {
+  flex-shrink: 0;
+}
+
+/* Divider */
+.vk-auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 10px 0 8px;
+  color: #9CA3AF;
+  font-size: 10.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vk-auth-divider::before,
+.vk-auth-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.vk-auth-divider span {
+  padding: 0 10px;
+}
+
+/* --------------------------------------------------------------------------
+   ALERTS
+   -------------------------------------------------------------------------- */
+.vk-auth-alert {
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vk-auth-alert.error {
+  background-color: #FEE2E2;
+  color: #DC2626;
+  border: 1px solid #FCA5A5;
+}
+
+.vk-auth-alert.success {
+  background-color: #DCFCE7;
+  color: #16A34A;
+  border: 1px solid #86EFAC;
+}
+
+/* --------------------------------------------------------------------------
+   FORM FIELDS & 2-COLUMN GRID ROWS
+   -------------------------------------------------------------------------- */
+.vk-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vk-auth-grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.vk-auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.vk-auth-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vk-auth-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--color-text-primary, #1F2937);
+  margin: 0;
+}
+
+.vk-auth-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.vk-auth-input-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 13px;
+  color: var(--color-text-muted, #9CA3AF);
+  pointer-events: none;
+}
+
+.vk-auth-input {
+  width: 100%;
+  height: 35px;
+  padding: 6px 10px 6px 30px;
+  border: 1.5px solid var(--color-border, #E5E7EB);
+  border-radius: 8px;
+  font-size: 12.5px;
+  color: var(--color-text-headline, #0D153C);
+  background-color: #ffffff;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.vk-auth-input:focus {
+  border-color: var(--color-primary, #8E0D12);
+  box-shadow: 0 0 0 2.5px rgba(142, 13, 18, 0.1);
+}
+
+/* --------------------------------------------------------------------------
+   CUSTOM DROPDOWN (PREVENTS POPUP OVERFLOW)
+   -------------------------------------------------------------------------- */
+.vk-custom-dropdown-wrap {
+  position: relative;
+}
+
+.vk-custom-dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  background-color: #ffffff;
+  padding: 6px 10px 6px 30px;
+}
+
+.vk-custom-dropdown-btn.open {
+  border-color: var(--color-primary, #8E0D12);
+  box-shadow: 0 0 0 2.5px rgba(142, 13, 18, 0.1);
+}
+
+.vk-custom-dropdown-selected {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-text-headline, #0D153C);
+  font-size: 12px;
+}
+
+.vk-custom-dropdown-btn:not(.has-value) .vk-custom-dropdown-selected {
+  color: var(--color-text-muted, #71717A);
+}
+
+.vk-custom-dropdown-chevron {
+  font-size: 11px;
+  color: var(--color-text-muted, #71717A);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 6px;
+}
+
+.vk-custom-dropdown-chevron.rotate {
+  transform: rotate(180deg);
+  color: var(--color-primary, #8E0D12);
+}
+
+.vk-custom-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-width: 210px;
+  max-height: 180px;
+  background: #ffffff;
+  border: 1.5px solid rgba(213, 173, 101, 0.6);
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(100, 20, 20, 0.18);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: vkDropdownFadeIn 0.15s ease;
+}
+
+@keyframes vkDropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vk-custom-dropdown-search-wrap {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  border-bottom: 1px solid rgba(213, 173, 101, 0.25);
+  background: var(--color-bg-subtle, #FFF8EB);
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.vk-custom-dropdown-search-icon {
+  font-size: 11px;
+  color: var(--color-primary, #8E0D12);
+  flex-shrink: 0;
+}
+
+.vk-custom-dropdown-search-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 11px;
+  font-family: inherit;
+  color: var(--color-text-headline, #0D153C);
+}
+
+.vk-custom-dropdown-search-input::placeholder {
+  color: var(--color-text-muted, #9CA3AF);
+}
+
+.vk-custom-dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  max-height: 135px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(213, 173, 101, 0.8) transparent;
+}
+
+.vk-custom-dropdown-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.vk-custom-dropdown-list::-webkit-scrollbar-thumb {
+  background: rgba(213, 173, 101, 0.6);
+  border-radius: 4px;
+}
+
+.vk-custom-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  font-size: 11.5px;
+  color: var(--color-text-primary, #1F2937);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.vk-custom-dropdown-item span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.vk-custom-dropdown-item:hover {
+  background-color: var(--color-bg-subtle, #FFF8EB);
+  color: var(--color-primary, #8E0D12);
+  padding-left: 12px;
+}
+
+.vk-custom-dropdown-item.active {
+  background-color: #FFF2DB;
+  color: var(--color-primary, #8E0D12);
+  font-weight: 600;
+}
+
+.vk-custom-dropdown-check {
+  font-size: 12px;
+  color: var(--color-primary, #8E0D12);
+  flex-shrink: 0;
+  margin-left: 6px;
+}
+
+.vk-custom-dropdown-empty {
+  padding: 10px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--color-text-muted, #9CA3AF);
+}
+
+.vk-auth-eye-btn {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  color: var(--color-text-muted, #9CA3AF);
+  cursor: pointer;
+  padding: 2px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  transition: color 0.18s ease;
+}
+
+.vk-auth-eye-btn:hover {
+  color: var(--color-primary, #8E0D12);
+}
+
+/* OTP Row */
+.vk-auth-otp-row {
+  display: flex;
+  gap: 6px;
+}
+
+.vk-auth-otp-input {
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.vk-auth-send-otp-btn {
+  padding: 0 10px;
+  height: 35px;
+  white-space: nowrap;
+  background-color: var(--color-bg-subtle, #FFF8EB);
+  border: 1.5px solid var(--color-primary, #8E0D12);
+  color: var(--color-primary, #8E0D12);
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.vk-auth-send-otp-btn:hover:not(:disabled) {
+  background-color: var(--color-primary, #8E0D12);
+  color: #ffffff;
+}
+
+.vk-auth-send-otp-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.vk-auth-resend-countdown {
+  font-size: 10.5px;
+  color: var(--color-primary, #8E0D12);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   CHECKBOXES & CONTROLS COMPACT ROW
+   -------------------------------------------------------------------------- */
+.vk-auth-controls-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: var(--color-bg-subtle, #FFF9F0);
+  border-radius: 8px;
+  border: 1px solid rgba(142, 13, 18, 0.08);
+  margin-top: 2px;
+}
+
+.vk-auth-checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vk-auth-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--color-text-primary, #1F2937);
+  cursor: pointer;
+  user-select: none;
+}
+
+.vk-auth-checkbox-label input[type='checkbox'] {
+  accent-color: var(--color-primary, #8E0D12);
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+}
+
+.vk-auth-checkbox-label a {
+  color: var(--color-primary, #8E0D12);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.vk-auth-checkbox-label a:hover {
+  text-decoration: underline;
+}
+
+.vk-auth-forgot-link {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-primary, #8E0D12);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.vk-auth-forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   SUBMIT BUTTON & FOOTER
+   -------------------------------------------------------------------------- */
+.vk-auth-submit-btn {
+  width: 100%;
+  height: 38px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #8E0D12 0%, #B8151B 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(142, 13, 18, 0.25);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 2px;
+}
+
+.vk-auth-submit-btn:hover {
+  background: linear-gradient(135deg, #A31016 0%, #D0181F 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(142, 13, 18, 0.35);
+}
+
+.vk-auth-footer-links {
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(213, 173, 101, 0.35);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vk-auth-register-prompt {
+  font-size: 11.5px;
+  color: var(--color-text-secondary, #555C68);
+  margin: 0;
+}
+
+.vk-auth-highlight-link {
+  color: var(--color-primary, #8E0D12);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.vk-auth-highlight-link:hover {
+  text-decoration: underline;
+}
+
+.vk-auth-role-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 10.5px;
+  color: var(--color-text-muted, #71717A);
+}
+
+.vk-auth-vendor-portal-link {
+  color: var(--color-primary, #8E0D12);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.vk-auth-vendor-portal-link:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN FOR ALL DEVICES
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .vk-auth-main {
+    justify-content: center;
+    padding: 12px 16px;
+  }
+
+  .vk-auth-card {
+    max-width: 480px;
+  }
+}
+
+/* Tablets and Mobile Devices: Release viewport lock, enable natural scroll */
+@media (max-width: 768px) {
+  .vk-auth-page {
+    height: auto !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  .vk-auth-main {
+    height: auto !important;
+    min-height: calc(100vh - 65px) !important;
+    min-height: calc(100dvh - 65px) !important;
+    overflow: visible !important;
+    padding: 18px 14px 28px !important;
+    align-items: flex-start !important;
+  }
+
+  .vk-auth-card {
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    max-width: 460px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 18px 16px !important;
+    border-radius: 16px !important;
+  }
+}
+
+/* Mobile Devices: 1 Label / Field per row */
+@media (max-width: 580px) {
+  .vk-auth-header {
+    padding: 10px 14px;
+  }
+
+  .vk-auth-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .vk-auth-brand-title {
+    font-size: 16px;
+  }
+
+  .vk-auth-brand-tagline {
+    display: none;
+  }
+
+  .vk-auth-back-link {
+    font-size: 11.5px;
+    padding: 5px 10px;
+  }
+
+  .vk-auth-card {
+    padding: 16px 14px !important;
+  }
+
+  .vk-auth-grid-row {
+    grid-template-columns: 1fr !important;
+    gap: 7px !important;
+  }
+
+  .vk-auth-input {
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .vk-auth-controls-block {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .vk-auth-checkbox-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .vk-auth-role-switch {
+    flex-direction: column;
+    gap: 2px;
+  }
+}
+
+/* Small Screens */
+@media (max-width: 380px) {
+  .vk-auth-header {
+    padding: 8px 10px;
+  }
+
+  .vk-auth-brand-title {
+    font-size: 14.5px;
+  }
+
+  .vk-auth-back-link span {
+    font-size: 11px;
+  }
+
+  .vk-auth-card {
+    padding: 14px 12px !important;
+  }
+
+  .vk-auth-title {
+    font-size: 15.5px;
+  }
+
+  .vk-social-btn {
+    font-size: 11.5px;
+    padding: 5px 8px;
+    height: 34px;
+  }
+
+  .vk-auth-submit-btn {
+    font-size: 13px;
+    height: 36px;
+  }
+}

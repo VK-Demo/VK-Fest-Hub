@@ -1,0 +1,509 @@
+/* ==========================================================================
+   VK FEST HUB - LOGIN PRELOADER GATEWAY STYLES
+   ========================================================================== */
+
+.vk-login-preloader-page {
+  position: relative;
+  height: 100vh;
+  max-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #FFFFFF;
+  font-family: var(--font-ui, system-ui, -apple-system, sans-serif);
+  overflow: hidden;
+}
+
+/* Dark cinematic vignette overlay with royal maroon & amber gradient */
+.vk-login-preloader-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at center,
+      rgba(15, 7, 7, 0.68) 0%,
+      rgba(10, 3, 4, 0.88) 75%,
+      rgba(5, 1, 2, 0.95) 100%
+    ),
+    linear-gradient(180deg, rgba(142, 13, 18, 0.32) 0%, rgba(10, 3, 4, 0.82) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Header */
+.vk-login-preloader-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
+  flex-shrink: 0;
+}
+
+.vk-login-preloader-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.vk-login-preloader-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #C9A063;
+  box-shadow: 0 4px 12px rgba(201, 160, 99, 0.35);
+}
+
+.vk-login-preloader-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.vk-login-preloader-brand-title {
+  font-family: var(--font-heading, serif);
+  font-size: 21px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.5px;
+}
+
+.vk-login-preloader-brand-subtitle {
+  font-size: 11px;
+  color: #F0DFBE;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.vk-login-preloader-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.vk-login-preloader-back-btn:hover {
+  background: rgba(201, 160, 99, 0.2);
+  border-color: #C9A063;
+  color: #F0DFBE;
+  transform: translateX(-3px);
+}
+
+/* Main Container */
+.vk-login-preloader-main {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px 28px;
+  min-height: 0;
+}
+
+.vk-login-preloader-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Intro */
+.vk-login-preloader-intro {
+  text-align: center;
+  max-width: 680px;
+  margin-bottom: 22px;
+}
+
+.vk-login-preloader-heading {
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: 34px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+  margin: 0;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Dual Cards */
+.vk-login-preloader-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.vk-login-preloader-card {
+  position: relative;
+  background: rgba(28, 16, 18, 0.74);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 26px 26px 22px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+}
+
+.vk-login-preloader-card:hover {
+  transform: translateY(-5px);
+  background: rgba(36, 20, 22, 0.88);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55);
+}
+
+/* User Card Specific */
+.vk-card-user:hover {
+  border-color: rgba(220, 38, 38, 0.55);
+  box-shadow: 0 20px 48px rgba(220, 38, 38, 0.22);
+}
+
+/* Vendor Card Specific */
+.vk-card-vendor:hover {
+  border-color: rgba(209, 167, 104, 0.65);
+  box-shadow: 0 20px 48px rgba(201, 160, 99, 0.22);
+}
+
+.vk-login-card-badge {
+  align-self: center;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  background: rgba(220, 38, 38, 0.18);
+  border: 1px solid rgba(220, 38, 38, 0.4);
+  color: #FCA5A5;
+  margin-bottom: 16px;
+}
+
+.vk-login-card-badge.vendor-badge {
+  background: rgba(209, 167, 104, 0.16);
+  border-color: rgba(209, 167, 104, 0.45);
+  color: #F0DFBE;
+}
+
+/* Icon Wrap */
+.vk-login-card-icon-wrap {
+  align-self: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: transform 0.3s ease;
+}
+
+.vk-login-preloader-card:hover .vk-login-card-icon-wrap {
+  transform: scale(1.06);
+}
+
+.vk-login-card-icon-wrap.user-icon {
+  background: linear-gradient(135deg, #8E0D12 0%, #B91C1C 100%);
+  box-shadow: 0 8px 24px rgba(142, 13, 18, 0.45);
+  color: #FFFFFF;
+}
+
+.vk-login-card-icon-wrap.vendor-icon {
+  background: linear-gradient(135deg, #9E7438 0%, #C9A063 100%);
+  box-shadow: 0 8px 24px rgba(201, 160, 99, 0.38);
+  color: #FFFFFF;
+}
+
+.vk-login-card-icon {
+  font-size: 28px;
+}
+
+.vk-login-card-title {
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: 23px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.vk-login-card-desc {
+  font-size: 13.5px;
+  color: #D1D5DB;
+  line-height: 1.5;
+  margin: 0 0 20px;
+  flex: 1;
+  text-align: center;
+}
+
+/* Button */
+.vk-login-card-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 11px 20px;
+  border-radius: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+.vk-login-card-btn.user-btn {
+  background: linear-gradient(135deg, #8E0D12 0%, #A81218 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(142, 13, 18, 0.35);
+}
+
+.vk-login-card-btn.user-btn:hover {
+  background: linear-gradient(135deg, #A81218 0%, #C41C23 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(142, 13, 18, 0.5);
+}
+
+.vk-login-card-btn.vendor-btn {
+  background: linear-gradient(135deg, #C9A063 0%, #B88E52 100%);
+  color: #1A1208;
+  box-shadow: 0 4px 14px rgba(201, 160, 99, 0.35);
+}
+
+.vk-login-card-btn.vendor-btn:hover {
+  background: linear-gradient(135deg, #D8B378 0%, #C9A063 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(201, 160, 99, 0.5);
+}
+
+.vk-btn-arrow {
+  font-size: 15px;
+  transition: transform 0.2s ease;
+}
+
+.vk-login-card-btn:hover .vk-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 900px) and (min-width: 641px) {
+  .vk-login-preloader-page {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .vk-login-preloader-cards {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    gap: 20px;
+  }
+
+  .vk-login-preloader-heading {
+    font-size: 28px;
+  }
+
+  .vk-login-preloader-header {
+    padding: 14px 20px;
+  }
+}
+
+/* ==========================================================================
+   MOBILE VIEW (Strictly Viewport Only, Center Dual Icons Side-by-Side)
+   Left: User Login | Right: Vendor Login
+   ========================================================================== */
+@media (max-width: 640px) {
+  .vk-login-preloader-page {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .vk-login-preloader-header {
+    flex-shrink: 0;
+    padding: 12px 16px;
+  }
+
+  .vk-login-preloader-logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .vk-login-preloader-brand-title {
+    font-size: 17px;
+  }
+
+  .vk-login-preloader-brand-subtitle {
+    font-size: 10px;
+  }
+
+  .vk-login-preloader-back-btn span {
+    display: none;
+  }
+
+  .vk-login-preloader-back-btn {
+    padding: 8px 12px;
+  }
+
+  .vk-login-preloader-main {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+  }
+
+  .vk-login-preloader-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .vk-login-preloader-intro {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .vk-login-preloader-heading {
+    font-size: 22px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+    letter-spacing: -0.3px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  }
+
+  /* Two icons side-by-side: Left User, Right Vendor */
+  .vk-login-preloader-cards {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 36px !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Transparent clickable portal */
+  .vk-login-preloader-card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    cursor: pointer;
+    flex: 1 !important;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .vk-login-preloader-card:active {
+    transform: scale(0.92) !important;
+  }
+
+  /* Hide description, badge, and continue button */
+  .vk-login-card-badge,
+  .vk-login-card-desc,
+  .vk-login-card-btn {
+    display: none !important;
+  }
+
+  /* Circular Glow Icon Wrap */
+  .vk-login-card-icon-wrap {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .vk-login-card-icon-wrap.user-icon {
+    background: linear-gradient(135deg, #8E0D12 0%, #B91C1C 100%);
+    box-shadow: 0 8px 24px rgba(142, 13, 18, 0.6);
+    border: 2.5px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .vk-login-card-icon-wrap.vendor-icon {
+    background: linear-gradient(135deg, #9E7438 0%, #C9A063 100%);
+    box-shadow: 0 8px 24px rgba(201, 160, 99, 0.55);
+    border: 2.5px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .vk-login-card-icon {
+    font-size: 36px;
+    color: #FFFFFF;
+  }
+
+  /* Portal Name underneath icon */
+  .vk-login-card-title {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 0;
+    letter-spacing: -0.2px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+    white-space: nowrap;
+  }
+}
+
+/* Extra Small Phones (320px - 380px) */
+@media (max-width: 380px) {
+  .vk-login-preloader-intro {
+    margin-bottom: 24px;
+  }
+
+  .vk-login-preloader-heading {
+    font-size: 19px;
+  }
+
+  .vk-login-preloader-cards {
+    gap: 24px !important;
+  }
+
+  .vk-login-card-icon-wrap {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+  }
+
+  .vk-login-card-icon {
+    font-size: 30px;
+  }
+
+  .vk-login-card-title {
+    font-size: 14.5px;
+  }
+}

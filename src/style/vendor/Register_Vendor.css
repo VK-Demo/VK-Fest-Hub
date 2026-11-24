@@ -1,0 +1,599 @@
+/* ==========================================================================
+   VK FEST HUB - VENDOR REGISTRATION STYLES
+   Maintains 100% theme consistency with VK FEST HUB Design System
+   ========================================================================== */
+
+.vk-reg-page {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #FEF3DD;
+  background-image: url('../../assets/images/common/krishna_auth_bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  font-family: var(--font-ui, 'Poppins', sans-serif);
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   TOP HEADER
+   -------------------------------------------------------------------------- */
+.vk-reg-header {
+  background-color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(213, 173, 101, 0.35);
+  padding: 10px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(100, 30, 20, 0.04);
+}
+
+.vk-reg-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vk-reg-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.vk-reg-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-primary, #8E0D12);
+}
+
+.vk-reg-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.vk-reg-brand-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary, #8E0D12);
+  line-height: 1.2;
+}
+
+.vk-reg-brand-tagline {
+  font-size: 11px;
+  color: var(--color-text-secondary, #555C68);
+  font-weight: 500;
+}
+
+.vk-reg-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary, #1F2937);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: var(--color-bg-subtle, #FFF8EB);
+  border: 1px solid var(--color-border, #F0E3CB);
+  transition: all 0.2s ease;
+}
+
+.vk-reg-back-link:hover {
+  background: var(--color-primary, #8E0D12);
+  color: #ffffff;
+  border-color: var(--color-primary, #8E0D12);
+}
+
+.vk-reg-back-icon {
+  font-size: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   MAIN REGISTRATION BODY & CARD
+   -------------------------------------------------------------------------- */
+.vk-reg-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px clamp(16px, 4vw, 40px);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.vk-reg-card {
+  width: 100%;
+  max-width: 580px;
+  max-height: calc(100vh - 74px);
+  max-height: calc(100dvh - 74px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 2px solid rgba(213, 173, 101, 0.6);
+  box-shadow: 
+    0 16px 40px rgba(90, 10, 20, 0.14),
+    0 0 0 1px rgba(255, 255, 255, 0.9) inset,
+    0 0 24px rgba(212, 175, 55, 0.18);
+  padding: 14px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.vk-reg-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 30px;
+  right: 30px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #D4AF37, #8E0D12, #D4AF37, transparent);
+  border-radius: 0 0 4px 4px;
+}
+
+/* Card Top: Brand Row + Title */
+.vk-reg-card-top {
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vk-reg-card-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vk-reg-card-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-primary, #8E0D12);
+  box-shadow: 0 2px 8px rgba(142, 13, 18, 0.18);
+  flex-shrink: 0;
+}
+
+.vk-reg-card-brand-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.vk-reg-card-brand-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary, #8E0D12);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.vk-reg-card-tagline {
+  font-size: 10.5px;
+  color: var(--color-text-secondary, #555C68);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.vk-reg-title {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--color-text-headline, #0D153C);
+  margin: 3px 0 0;
+  text-align: left;
+}
+
+/* --------------------------------------------------------------------------
+   ALERTS
+   -------------------------------------------------------------------------- */
+.vk-reg-alert {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 11.5px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vk-reg-alert.error {
+  background-color: #FEE2E2;
+  color: #DC2626;
+  border: 1px solid #FCA5A5;
+}
+
+.vk-reg-alert.success {
+  background-color: #DCFCE7;
+  color: #16A34A;
+  border: 1px solid #86EFAC;
+}
+
+/* --------------------------------------------------------------------------
+   FORM FIELDS & 2-COLUMN GRID
+   -------------------------------------------------------------------------- */
+.vk-reg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.vk-reg-grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.vk-reg-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vk-reg-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vk-reg-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--color-text-primary, #1F2937);
+  margin: 0;
+}
+
+.vk-reg-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.vk-reg-input-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 13px;
+  color: var(--color-text-muted, #9CA3AF);
+  pointer-events: none;
+}
+
+.vk-reg-input {
+  width: 100%;
+  height: 34px;
+  padding: 6px 10px 6px 30px;
+  border: 1.5px solid var(--color-border, #E5E7EB);
+  border-radius: 8px;
+  font-size: 12.5px;
+  color: var(--color-text-headline, #0D153C);
+  background-color: #ffffff;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.vk-reg-input:focus {
+  border-color: var(--color-primary, #8E0D12);
+  box-shadow: 0 0 0 3px rgba(142, 13, 18, 0.1);
+}
+
+.vk-reg-select {
+  appearance: auto;
+  cursor: pointer;
+  background-color: #ffffff;
+  font-size: 11.5px;
+  padding-left: 28px;
+}
+
+.vk-reg-eye-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--color-text-muted, #9CA3AF);
+  cursor: pointer;
+  padding: 3px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  transition: color 0.18s ease;
+}
+
+.vk-reg-eye-btn:hover {
+  color: var(--color-primary, #8E0D12);
+}
+
+/* OTP Row */
+.vk-reg-otp-row {
+  display: flex;
+  gap: 6px;
+}
+
+.vk-reg-otp-input {
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.vk-reg-send-otp-btn {
+  padding: 0 10px;
+  height: 34px;
+  white-space: nowrap;
+  background-color: var(--color-bg-subtle, #FFF8EB);
+  border: 1.5px solid var(--color-primary, #8E0D12);
+  color: var(--color-primary, #8E0D12);
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.vk-reg-send-otp-btn:hover:not(:disabled) {
+  background-color: var(--color-primary, #8E0D12);
+  color: #ffffff;
+}
+
+.vk-reg-send-otp-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.vk-reg-resend-countdown {
+  font-size: 10.5px;
+  color: var(--color-primary, #8E0D12);
+  font-weight: 600;
+}
+
+/* Checkboxes and Controls */
+.vk-reg-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 10px;
+  background: var(--color-bg-subtle, #FFF9F0);
+  border-radius: 8px;
+  border: 1px solid rgba(142, 13, 18, 0.08);
+  margin-top: 1px;
+}
+
+.vk-reg-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--color-text-primary, #1F2937);
+  cursor: pointer;
+  user-select: none;
+}
+
+.vk-reg-checkbox-label input[type='checkbox'] {
+  accent-color: var(--color-primary, #8E0D12);
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+}
+
+.vk-reg-checkbox-label a {
+  color: var(--color-primary, #8E0D12);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.vk-reg-checkbox-label a:hover {
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.vk-reg-submit-btn {
+  width: 100%;
+  height: 36px;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, #8E0D12 0%, #B8151B 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(142, 13, 18, 0.25);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 2px;
+}
+
+.vk-reg-submit-btn:hover {
+  background: linear-gradient(135deg, #A31016 0%, #D0181F 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(142, 13, 18, 0.35);
+}
+
+/* Footer Switching Links */
+.vk-reg-footer-links {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(213, 173, 101, 0.35);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.vk-reg-login-prompt {
+  font-size: 11.5px;
+  color: var(--color-text-secondary, #555C68);
+  margin: 0;
+}
+
+.vk-reg-highlight-link {
+  color: var(--color-primary, #8E0D12);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.vk-reg-highlight-link:hover {
+  text-decoration: underline;
+}
+
+.vk-reg-vendor-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--color-text-muted, #71717A);
+}
+
+.vk-reg-vendor-link {
+  color: var(--color-primary, #8E0D12);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.vk-reg-vendor-link:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN FOR ALL DEVICES
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .vk-reg-main {
+    justify-content: center;
+    padding: 12px 16px;
+  }
+
+  .vk-reg-card {
+    max-width: 540px;
+  }
+}
+
+/* Tablets and Mobile Devices: Release viewport lock, enable natural scroll */
+@media (max-width: 768px) {
+  .vk-reg-page {
+    height: auto !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  .vk-reg-main {
+    height: auto !important;
+    min-height: calc(100vh - 65px) !important;
+    min-height: calc(100dvh - 65px) !important;
+    overflow: visible !important;
+    padding: 18px 14px 28px !important;
+    align-items: flex-start !important;
+  }
+
+  .vk-reg-card {
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 18px 16px !important;
+    border-radius: 16px !important;
+  }
+}
+
+/* Mobile Devices: 1 Label / Field per row */
+@media (max-width: 580px) {
+  .vk-reg-header {
+    padding: 10px 14px;
+  }
+
+  .vk-reg-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .vk-reg-brand-title {
+    font-size: 16px;
+  }
+
+  .vk-reg-brand-tagline {
+    display: none;
+  }
+
+  .vk-reg-back-link {
+    font-size: 11.5px;
+    padding: 5px 10px;
+  }
+
+  .vk-reg-card {
+    padding: 16px 14px !important;
+  }
+
+  .vk-reg-grid-row {
+    grid-template-columns: 1fr !important;
+    gap: 7px !important;
+  }
+
+  .vk-reg-input {
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .vk-reg-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .vk-reg-vendor-note {
+    flex-direction: column;
+    gap: 2px;
+  }
+}
+
+/* Small Screens */
+@media (max-width: 380px) {
+  .vk-reg-header {
+    padding: 8px 10px;
+  }
+
+  .vk-reg-brand-title {
+    font-size: 14.5px;
+  }
+
+  .vk-reg-back-link span {
+    font-size: 11px;
+  }
+
+  .vk-reg-card {
+    padding: 14px 12px !important;
+  }
+
+  .vk-reg-title {
+    font-size: 15.5px;
+  }
+
+  .vk-reg-submit-btn {
+    font-size: 13px;
+    height: 36px;
+  }
+}

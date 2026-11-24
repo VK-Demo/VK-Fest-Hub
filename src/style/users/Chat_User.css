@@ -1,0 +1,55 @@
+/* ==========================================================================
+   VK FEST HUB - USER CHAT PAGE
+   ========================================================================== */
+
+.vk-chat-user-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-canvas, #FFFDF9);
+  color: var(--color-text-primary, #1F2937);
+  font-family: var(--font-ui, system-ui, -apple-system, sans-serif);
+}
+
+.vk-chat-user-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+}
+
+.vk-chat-user-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.vk-chat-user-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-primary, #8E0D12);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+@media (max-width: 768px) {
+  .vk-chat-user-main {
+    padding: 60px 18px;
+  }
+
+  .vk-chat-user-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vk-chat-user-main {
+    padding: 40px 14px;
+  }
+
+  .vk-chat-user-title {
+    font-size: 24px;
+  }
+}
