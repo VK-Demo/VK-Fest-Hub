@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { useVendor } from "../../context/VendorContext";
 import { getInitials } from "../../utils/storage";
+import logoImg from "../../../../assets/images/common/Logo.jpeg";
 import "./DashboardLayout.css";
 
 const NAV_ITEMS = [
@@ -64,18 +65,23 @@ function Sidebar() {
             className="brand-mark"
             onClick={() => setSidebarOpen(false)}
           >
-            <img src="/logo/Logo.jpg" alt="VK Fest Hub Logo" className="brand-logo-img" />
+            <img src={logoImg} alt="VK Fest Hub Logo" className="brand-logo-img" />
             <div>
               <b>VK Fest Hub</b>
               <small>VENDOR PARTNER</small>
             </div>
           </NavLink>
           <button
+            type="button"
             className="icon-btn mobile-close"
-            onClick={() => setSidebarOpen(false)}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setSidebarOpen(false);
+            }}
             aria-label="Close menu"
           >
-            <X size={18} />
+            <X size={18} style={{ pointerEvents: "none" }} />
           </button>
         </div>
 
@@ -145,7 +151,12 @@ function Sidebar() {
       {sidebarOpen && (
         <div
           className="sidebar-scrim"
-          onClick={() => setSidebarOpen(false)}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setSidebarOpen(false);
+          }}
+          aria-label="Close navigation overlay"
         />
       )}
     </>
@@ -183,11 +194,16 @@ function Navbar() {
   return (
     <header className="topbar">
       <button
+        type="button"
         className="icon-btn menu-trigger"
-        onClick={toggleSidebar}
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleSidebar();
+        }}
         aria-label="Open menu"
       >
-        <Menu size={20} />
+        <Menu size={20} style={{ pointerEvents: "none" }} />
       </button>
 
       <div className="breadcrumb">

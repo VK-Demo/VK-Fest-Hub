@@ -244,10 +244,62 @@
   .onboarding-card {
     padding: 24px 20px;
   }
+
   .form-grid {
     grid-template-columns: 1fr;
   }
+
   .form-span {
     grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .onboarding-header {
+    height: 56px;
+    padding: 0 12px;
+  }
+  .onboarding-content {
+    margin: 20px auto 40px;
+    padding: 0 12px;
+  }
+  .onboarding-content > h1 {
+    font-size: 22px;
+  }
+  .onboarding-content > p {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  .onboarding-card {
+    padding: 18px 14px;
+    border-radius: 12px;
+  }
+  .form-grid {
+    gap: 16px;
+  }
+  .field span {
+    font-size: 12.5px;
+    margin-bottom: 6px;
+  }
+  .input-wrap {
+    height: 44px;
+    padding: 0 12px;
+  }
+  .input-wrap input {
+    font-size: 13.5px;
+  }
+  .field textarea {
+    padding: 10px 12px;
+    font-size: 13.5px;
+    min-height: 95px;
+  }
+  .onboarding-note {
+    padding: 12px 14px;
+    font-size: 12px;
+    gap: 10px;
+  }
+  .onboarding-btn-submit {
+    height: 48px;
+    font-size: 14px;
   }
 }

@@ -40,3 +40,46 @@
   flex-direction: column;
   gap: 14px;
 }
+
+@media (max-width: 768px) {
+  .lead-details {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .filter-tabs {
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .filter-tabs button {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+  .lead-card, .enquiry-card {
+    padding: 16px 14px;
+    gap: 12px;
+  }
+  .lead-card-top {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .lead-person h3 {
+    font-size: 15px;
+  }
+  .lead-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .lead-actions .btn,
+  .lead-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+  .lead-status-select,
+  .lead-status-select select {
+    width: 100%;
+  }
+}

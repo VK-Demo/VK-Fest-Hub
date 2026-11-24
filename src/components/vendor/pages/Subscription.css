@@ -117,3 +117,27 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .plan-card {
+    padding: 18px 16px;
+  }
+  .plan-card b {
+    font-size: 16px;
+  }
+  .plan-card strong {
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+  .payment-next {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 16px;
+    gap: 14px;
+  }
+  .payment-next .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

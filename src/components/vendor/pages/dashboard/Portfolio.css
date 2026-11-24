@@ -35,8 +35,19 @@
   flex: 1;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 580px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .portfolio-thumb {
+    height: 180px;
   }
 }

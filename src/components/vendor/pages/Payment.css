@@ -163,3 +163,16 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .checkout-methods, .order-summary {
+    padding: 18px 14px;
+  }
+  .method-row {
+    padding: 10px 12px;
+  }
+  .method-icon {
+    width: 32px;
+    height: 32px;
+  }
+}

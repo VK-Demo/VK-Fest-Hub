@@ -92,21 +92,21 @@ function PublicProfile() {
 
           <div className="profile-actions">
             <button
-              className="btn secondary"
+              className="btn secondary btn-edit"
               onClick={() => openModal("editProfile")}
             >
               <Edit3 size={15} /> Edit Profile
             </button>
             <button
-              className="btn secondary"
+              className="icon-btn action-share"
               onClick={handleShare}
               title="Share"
               aria-label="Share"
             >
-              <Share2 size={15} />
+              <Share2 size={16} />
             </button>
             <button
-              className="icon-btn"
+              className="icon-btn action-more"
               onClick={() => openModal("profileMore")}
               aria-label="More options"
             >
@@ -120,19 +120,27 @@ function PublicProfile() {
 
         {/* Stats count bar */}
         <div className="profile-counts">
-          <span>
-            <b>{posts.length}</b> Posts & Media
-          </span>
-          <span>
-            <b>{services.length}</b> Active Packages
-          </span>
-          {profile?.website && (
-            <span>
-              <a href={profile.website} target="_blank" rel="noreferrer">
+          <div className="count-item">
+            <b>{posts.length}</b>
+            <small>Posts & Media</small>
+          </div>
+          <div className="count-item">
+            <b>{services.length}</b>
+            <small>Active Packages</small>
+          </div>
+          <div className="count-item">
+            {profile?.website ? (
+              <a href={profile.website} target="_blank" rel="noreferrer" className="website-link">
                 <b>Website ↗</b>
+                <small>Visit Store</small>
               </a>
-            </span>
-          )}
+            ) : (
+              <div className="verified-badge-mini">
+                <b>Verified</b>
+                <small>Partner</small>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Profile Tabs */}
@@ -153,47 +161,70 @@ function PublicProfile() {
             className={activeTab === "tagged" ? "selected" : ""}
             onClick={() => setActiveTab("tagged")}
           >
-            <Tag size={16} /> COUPLE STORIES
+            <Tag size={16} /> STORIES
           </span>
         </div>
 
         {/* Post Grid */}
-        <div className="post-grid">
-          <button
-            className="add-post-tile"
-            onClick={() => openModal("addPost")}
-          >
-            <ImagePlus size={28} />
-            <b>Share your latest work</b>
-            <small>Upload wedding photos or reels</small>
-          </button>
-
-          {posts.map((post) => (
-            <div className="post-tile" key={post.id}>
-              {post.src ? (
-                post.type === "video" ? (
-                  <video src={post.src} />
-                ) : (
-                  <img src={post.src} alt={post.caption} />
-                )
-              ) : (
-                <div className="post-placeholder">
-                  <Camera size={32} />
-                </div>
-              )}
-              <div className="post-hover">
-                <span>{post.caption}</span>
-                <button
-                  onClick={() => deletePost(post.id)}
-                  title="Delete post"
-                  aria-label="Delete post"
-                >
-                  <Trash2 size={16} />
-                </button>
-              </div>
+        {posts.length === 0 ? (
+          <div className="empty-profile-posts" onClick={() => openModal("addPost")}>
+            <div className="empty-posts-icon">
+              <ImagePlus size={28} />
             </div>
-          ))}
-        </div>
+            <b>Share your latest work</b>
+            <p>Upload your wedding photos, event setups, or reels to showcase your work to couples.</p>
+            <button
+              className="btn primary btn-sm"
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                openModal("addPost");
+              }}
+            >
+              <ImagePlus size={15} /> Upload Photos & Reels
+            </button>
+          </div>
+        ) : (
+          <div className="post-grid">
+            <button
+              className="add-post-tile"
+              onClick={() => openModal("addPost")}
+            >
+              <ImagePlus size={26} />
+              <b>Add Post</b>
+              <small>Upload work</small>
+            </button>
+
+            {posts.map((post) => (
+              <div className="post-tile" key={post.id}>
+                {post.src ? (
+                  post.type === "video" ? (
+                    <video src={post.src} />
+                  ) : (
+                    <img src={post.src} alt={post.caption} />
+                  )
+                ) : (
+                  <div className="post-placeholder">
+                    <Camera size={32} />
+                  </div>
+                )}
+                <div className="post-hover">
+                  <span>{post.caption}</span>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      deletePost(post.id);
+                    }}
+                    title="Delete post"
+                    aria-label="Delete post"
+                  >
+                    <Trash2 size={16} />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </>
   );

@@ -15,7 +15,7 @@
 .health-card {
   background: linear-gradient(110deg, #7f3019, #aa4f2d);
   color: #ffffff;
-  border-radius: var(--radius-md, 12px);
+  border-radius: var(--radius-md, 14px);
   padding: 24px 28px;
   display: flex;
   align-items: center;
@@ -27,62 +27,78 @@
 
 .health-left {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  align-items: flex-start;
+  gap: 18px;
+  flex: 1;
 }
 
 .health-icon {
-  width: 52px;
-  height: 52px;
+  width: 50px !important;
+  height: 50px !important;
+  min-width: 50px !important;
+  max-width: 50px !important;
+  flex: 0 0 50px !important;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: #ffffff;
   display: grid;
   place-items: center;
-  flex-shrink: 0;
+  flex-shrink: 0 !important;
 }
 
-.health-left .eyebrow {
+.health-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.health-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.health-body .eyebrow {
   color: #f7d6c5;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.05em;
   display: block;
+  text-transform: uppercase;
 }
 
-.health-left h3 {
+.health-body h3 {
   font: 700 18px 'Manrope', sans-serif;
   color: #ffffff;
-  margin: 4px 0 6px;
+  margin: 3px 0 6px;
 }
 
-.health-left p {
+.health-body p {
   font-size: 12px;
   color: #f5ddd1;
   margin: 0 0 10px;
   line-height: 1.5;
 }
 
-.progress {
+.health-body .progress {
   height: 6px;
-  width: min(340px, 50vw);
+  width: min(340px, 100%);
   background: rgba(255, 255, 255, 0.28);
   border-radius: 4px;
   overflow: hidden;
   margin-bottom: 6px;
 }
 
-.progress i {
+.health-body .progress i {
   display: block;
   height: 100%;
   background: #ffffff;
   border-radius: 4px;
 }
 
-.health-left small {
+.health-body small {
   font-size: 11px;
   color: #f5ddd1;
+  display: block;
 }
 
 .health-right {
@@ -95,6 +111,7 @@
 .health-score {
   font: 800 36px 'Manrope', sans-serif;
   color: #ffffff;
+  line-height: 1;
 }
 
 .health-card .btn.light {
@@ -111,6 +128,7 @@
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
 }
 
 .health-card .btn.light:hover {
@@ -169,13 +187,445 @@
 @media (max-width: 900px) {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
   .health-card {
     flex-direction: column;
     align-items: flex-start;
+    padding: 20px 18px;
+    gap: 16px;
+  }
+  .health-left {
+    width: 100%;
+    gap: 14px;
+  }
+  .health-left h3 {
+    font-size: 17px;
+  }
+  .progress {
+    width: 100%;
+    max-width: 100%;
   }
   .health-right {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    padding-top: 14px;
+  }
+  .health-score {
+    font-size: 30px;
+  }
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-heading {
+    flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+    width: 100%;
+  }
+  .page-heading h1 {
+    font-size: clamp(20px, 5.2vw, 24px);
+    line-height: 1.25;
+    word-break: break-word;
+  }
+  .page-heading p {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .page-heading > .btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+  .health-card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px 14px;
+    gap: 12px;
+    border-radius: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .health-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+  }
+  .health-icon {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    max-width: 42px !important;
+    flex: 0 0 42px !important;
+    border-radius: 10px;
+    flex-shrink: 0 !important;
+  }
+  .health-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+  .health-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .health-body .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.05em;
+  }
+  .health-body h3 {
+    font-size: 15.5px;
+    margin: 2px 0 4px;
+    line-height: 1.3;
+  }
+  .health-body p {
+    font-size: 11.5px;
+    line-height: 1.45;
+    margin: 0 0 8px;
+    color: #f5ddd1;
+  }
+  .health-body .progress {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 6px;
+    margin-bottom: 5px;
+  }
+  .health-body small {
+    font-size: 10.5px;
+    color: #f5ddd1;
+    display: block;
+  }
+  .health-right {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 12px;
+    margin-top: 2px;
+  }
+  .health-score {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .health-card .btn.light {
+    font-size: 11.5px;
+    padding: 7px 14px;
+    border-radius: 8px;
+  }
+  .stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .stat-card {
+    padding: 12px 10px;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  .stat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    margin-bottom: 4px;
+  }
+  .stat-top span {
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .stat-top i svg {
+    width: 16px;
+    height: 16px;
+  }
+  .stat-card strong {
+    font-size: 19px;
+    margin-bottom: 4px;
+    display: block;
+  }
+  .stat-card small.positive {
+    font-size: 10px;
+    line-height: 1.25;
+    white-space: normal;
+    display: flex;
+    align-items: flex-start;
+    gap: 3px;
+    word-break: break-word;
+  }
+  .stat-card small.positive svg {
+    width: 11px;
+    height: 11px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .section-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+    width: 100%;
+  }
+  .section-row h2 {
+    font-size: 16px;
+    margin: 0 0 2px;
+  }
+  .section-row p {
+    font-size: 11.5px;
+    margin: 0;
+  }
+  .section-row > button,
+  .section-row .btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 12.5px;
+    padding: 10px 14px;
+  }
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: 100%;
+  }
+  .service-card {
+    grid-template-columns: 82px 1fr !important;
+    min-height: auto;
+    border-radius: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .service-thumb {
+    width: 82px !important;
+    min-height: 112px !important;
+    border-radius: 12px 0 0 12px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .service-thumb svg {
+    width: 26px;
+    height: 26px;
+  }
+  .service-thumb span {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    font-size: 7.5px;
+    padding: 2px 5px;
+    border-radius: 4px;
+  }
+  .service-card-body {
+    padding: 11px 12px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .service-title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4px;
+  }
+  .service-title b {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.3;
+    min-width: 0;
+    word-break: break-word;
+  }
+  .service-card-body p {
+    font-size: 11px;
+    margin: 4px 0 6px;
+    color: var(--muted);
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .service-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 10px;
+    color: var(--muted);
+  }
+  .service-price {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: var(--ink);
+    margin-top: 6px;
+  }
+  .table-card {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .table-head {
+    padding: 12px 14px;
+  }
+  .table-head b {
+    font-size: 13px;
+  }
+  .table-head span {
+    font-size: 11px;
+  }
+  .enquiry-row {
+    padding: 12px 10px;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .enquiry-service {
+    display: none !important;
+  }
+  .couple-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+  .enquiry-person {
+    flex: 1;
+    min-width: 0;
+  }
+  .enquiry-person b {
+    font-size: 12px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .enquiry-person small {
+    font-size: 10px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 420px) {
+  .page-heading h1 {
+    font-size: 20px;
+  }
+  .page-heading p {
+    font-size: 11.5px;
+  }
+  .page-heading > .btn {
+    font-size: 12px;
+    padding: 9px 12px;
+  }
+  .health-card {
+    padding: 14px 12px;
+    gap: 10px;
+  }
+  .health-icon {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    max-width: 38px !important;
+    flex: 0 0 38px !important;
+    border-radius: 8px;
+  }
+  .health-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .health-body h3 {
+    font-size: 14.5px;
+  }
+  .health-body p {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+  .health-score {
+    font-size: 24px;
+  }
+  .health-card .btn.light {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+  .stats-grid {
+    gap: 8px !important;
+    margin-bottom: 16px;
+  }
+  .stat-card {
+    padding: 10px 8px;
+  }
+  .stat-top span {
+    font-size: 10px;
+  }
+  .stat-card strong {
+    font-size: 17px;
+  }
+  .stat-card small.positive {
+    font-size: 9px;
+  }
+  .service-card {
+    grid-template-columns: 76px 1fr !important;
+  }
+  .service-thumb {
+    width: 76px !important;
+    min-height: 105px !important;
+  }
+  .service-thumb svg {
+    width: 22px;
+    height: 22px;
+  }
+  .service-card-body {
+    padding: 9px 10px !important;
+  }
+  .service-title b {
+    font-size: 12.5px !important;
+  }
+  .service-card-body p {
+    font-size: 10.5px !important;
+  }
+  .service-meta {
+    font-size: 9.5px !important;
+    gap: 5px !important;
+  }
+  .service-price {
+    font-size: 12.5px !important;
+  }
+  .service-dropdown-menu {
+    right: 0;
+    min-width: 140px;
+  }
+  .enquiry-row {
+    padding: 10px 8px !important;
+    gap: 6px !important;
+  }
+  .couple-avatar {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 10px !important;
+  }
+  .enquiry-person b {
+    font-size: 11.5px !important;
+  }
+  .enquiry-person small {
+    font-size: 9.5px !important;
   }
 }
 

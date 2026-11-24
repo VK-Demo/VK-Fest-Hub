@@ -37,6 +37,7 @@ import {
   money,
   STORAGE_KEY
 } from "../utils/storage";
+import logoImg from "../../../assets/images/common/Logo.jpeg";
 import "./VendorContext.css";
 import "../../../style/vendor/Vendor_Dashboard.css";
 
@@ -47,7 +48,7 @@ import "../../../style/vendor/Vendor_Dashboard.css";
 export function Logo() {
   return (
     <div className="brand-mark">
-      <img src="/logo/Logo.jpg" alt="VK Fest Hub Logo" className="brand-logo-img" />
+      <img src={logoImg} alt="VK Fest Hub Logo" className="brand-logo-img" />
       <div>
         <b>VK Fest Hub</b>
         <small>VENDOR PARTNER</small>

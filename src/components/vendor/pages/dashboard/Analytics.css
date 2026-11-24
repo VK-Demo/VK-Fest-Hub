@@ -33,3 +33,48 @@
   border-radius: 4px 4px 0 0;
   transition: height 0.3s ease;
 }
+
+@media (max-width: 900px) {
+  .analytics-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .revenue-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .chart-card {
+    padding: 18px 14px;
+  }
+  .chart-title h3 {
+    font-size: 16px;
+  }
+  .chart-bars, .bar-chart {
+    height: 180px;
+    gap: 6px;
+    padding: 16px 2px 0;
+    overflow-x: auto;
+  }
+  .bar-col {
+    min-width: 18px;
+  }
+  .bar-fill, .bar-chart .bar {
+    max-width: 20px;
+  }
+  .bar-col small, .bar-chart small {
+    font-size: 9px;
+  }
+  .donut-wrap {
+    margin: 12px auto;
+  }
+  .revenue-legend {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+  }
+}

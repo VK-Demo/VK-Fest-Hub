@@ -87,9 +87,9 @@ function Overview() {
       <section className="health-card">
         <div className="health-left">
           <div className="health-icon">
-            <ShieldCheck size={26} />
+            <ShieldCheck size={24} />
           </div>
-          <div>
+          <div className="health-body">
             <span className="eyebrow">PROFILE VISIBILITY SCORE</span>
             <h3>Super Verified Wedding Partner</h3>
             <p>
